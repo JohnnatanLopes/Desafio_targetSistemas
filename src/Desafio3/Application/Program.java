@@ -64,9 +64,16 @@ public class Program {
         }
         double media = soma / qtdDias;
 
+        int cont = 0;
+        for(int i = 0; i < faturamentos.size();i++) {
+            if(faturamentos.get(i).getValor() > media) {
+                cont++;
+            }
+        }
+
         System.out.println("Menor valor: "+menor);
         System.out.println("Maior valor: "+maior);
-        System.out.println("Media de faturamento: "+String.format("%.4f", media));
+        System.out.println("Quantidade de dias que o faturamento foi maior que a media mensal: "+cont);
 
     }
 }
